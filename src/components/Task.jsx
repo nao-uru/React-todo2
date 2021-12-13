@@ -1,66 +1,8 @@
-import styled from "styled-components"
-
-const TaskList = styled.li`
- width: 90%;
- height: 60px;
- margin: 20px auto 0 auto;
- background: #FFFFFF;
- box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.25);
- border-radius: 5px;
- display: flex;
- align-items: center;
- position:reletive;
-
- &:focus {
-  outline: none;
-}
-`
-const TaskInput = styled.input`
-width: 55%;
-height: 100%;
-padding: 0 10px;
-font-weight: bold;
-color: #4D4D4D;
-
-&:focus {
-  outline: none;
-}
-`
-
-const TaskDone = styled.div`
- width: 25%;
- height: 100%;
- background: #AA93DB;
- display: flex;
- justify-content:center;
- align-items: center;
- color: #FFFFFF;
- transition:all 1.0s;
-
- &:hover {
-  color:#2D2C2C;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
- }
-`
-const TaskDoneText = styled.p`
- font-weight: bold;
- display: flex;
- cursor: pointer;
-
-`
-const DeleteIcon = styled.div`
- height: 100%;
- color:#787878;
- display: flex;
- justify-content:center;
- align-items: center;
- cursor: pointer;
- transition:all 1.0s;
-
- &:hover {
- color:#2D2C2C;
-}
-`
+import { TaskList } from "../css";
+import { TaskInput } from "../css";
+import { TaskDone } from "../css";
+import { TaskDoneText } from "../css";
+import { DeleteIcon } from "../css";
 
 export const Task = (props) => {
   const { taskText,taskList,id,setTaskList,showList} = props;
