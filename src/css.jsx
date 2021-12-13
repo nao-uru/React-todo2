@@ -73,7 +73,8 @@ export const TaskInput = styled.input`
  padding: 0 10px;
  font-weight: bold;
  color: #4D4D4D;
- 
+ border-radius: 5px;
+
  &:focus {
   outline: none;
 }
@@ -87,18 +88,17 @@ export const TaskDone = styled.div`
  justify-content:center;
  align-items: center;
  color: #FFFFFF;
- transition:all 1.0s;
+//  transition:all 1.0s;
+//  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 
  &:hover {
-  color:#2D2C2C;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+   opacity:0.8;
  }
 `
 export const TaskDoneText = styled.p`
  font-weight: bold;
  display: flex;
  cursor: pointer;
-
 `
 export const DeleteIcon = styled.div`
  height: 100%;

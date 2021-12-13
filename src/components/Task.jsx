@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { TaskList } from "../css";
 import { TaskInput } from "../css";
 import { TaskDone } from "../css";
@@ -6,8 +7,9 @@ import { DeleteIcon } from "../css";
 
 export const Task = (props) => {
   const { taskText,taskList,id,setTaskList,showList} = props;
-
   
+  const [taskDone, setTaskDone] = useState(false);
+
   const onChangeTaskInput = () => {
     console.log('change task input');
   }
@@ -23,18 +25,19 @@ export const Task = (props) => {
   }
 
   const onClickDone = () => {
-    console.log('');
+    setTaskDone(true);
+    if(taskDone === true) {
+      setTaskDone(false)
+    }
   }
-
-
 
   return (
    <>
-   <TaskList style={showList === true ? {} : {display: 'none'}}>
-     <TaskInput className="sm:text-lg text-sm" type='text' value={taskText} onChange={onChangeTaskInput}></TaskInput>
+   <TaskList style={showList === true ? {} : {display: 'none'},taskDone === true ? {backgroundColor:"#AA93DB"}: {backgroundColor:"#FFFF"}}>
+     <TaskInput style={taskDone === true ? {backgroundColor:"#AA93DB"}: {backgroundColor:"#FFFF"}} className="sm:text-lg text-sm" type='text' value={taskText} onChange={onChangeTaskInput}></TaskInput>
 
      <TaskDone>
-       <TaskDoneText className="sm:text-lg text-sm" onClick={onClickDone}>DONE</TaskDoneText>
+       <TaskDoneText className="sm:text-lg text-sm" onClick={() => onClickDone()} style={taskDone === true ? {color:'#787878'} :{color:'#FFFF'}}>{taskDone === true ? 'BACK' :'DONE'}</TaskDoneText>
      </TaskDone>
 
      <DeleteIcon className="sm:text-xl text-lg sm:ml-3 ml-6" onClick={onClickDelete}>
