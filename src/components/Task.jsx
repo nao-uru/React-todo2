@@ -1,9 +1,5 @@
 import { useState } from "react";
-import { TaskList } from "../css";
-import { TaskInput } from "../css";
-import { TaskDone } from "../css";
-import { TaskDoneText } from "../css";
-import { DeleteIcon } from "../css";
+import { TaskList,TaskInput,TaskDone,TaskDoneText,DeleteIcon } from "../css/task";
 
 export const Task = (props) => {
   const { taskText,taskList,id,setTaskList,showList} = props;
@@ -33,18 +29,36 @@ export const Task = (props) => {
 
   return (
    <>
-   <TaskList style={showList === true ? {} : {display: 'none'},taskDone === true ? {backgroundColor:"#AA93DB"}: {backgroundColor:"#FFFF"}}>
-     <TaskInput style={taskDone === true ? {backgroundColor:"#AA93DB"}: {backgroundColor:"#FFFF"}} className="sm:text-lg text-sm" type='text' value={taskText} onChange={onChangeTaskInput}></TaskInput>
+   <div className="container" style={showList ? {} : {display: 'none'}}>
+     <TaskList style={taskDone ? {backgroundColor:"#BDBDBD",boxShadow:'none'}: {backgroundColor:"#FFFF"}}>
+     <TaskInput 
+      className="sm:text-lg text-sm" 
+      type='text' 
+      value={taskText} 
+      onChange={onChangeTaskInput}
+      style={taskDone ? {backgroundColor:"#BDBDBD",color:'#787878'}: {backgroundColor:"#FFFF"}} 
+      />
 
-     <TaskDone>
-       <TaskDoneText className="sm:text-lg text-sm" onClick={() => onClickDone()} style={taskDone === true ? {color:'#787878'} :{color:'#FFFF'}}>{taskDone === true ? 'BACK' :'DONE'}</TaskDoneText>
+     <TaskDone style={taskDone ? {backgroundColor:'#BDBDBD'}: {}}>
+       <TaskDoneText 
+        className="sm:text-lg text-sm" 
+        onClick={() => onClickDone()} 
+        style={taskDone ? {color:'#787878'} :{color:'#FFFF'}}
+        >
+        {taskDone ? 'BACK' :'DONE'}
+        </TaskDoneText>
      </TaskDone>
 
      <DeleteIcon className="sm:text-xl text-lg sm:ml-3 ml-6" onClick={onClickDelete}>
      <i className="sm:text-2xl text-xl fas fa-backspace"></i>
      </DeleteIcon>
 
-   </TaskList>
+    </TaskList>
+  </div>
+   
    </>
   )
 }
+
+// ,taskDone === true ? {backgroundColor:"#AA93DB"}: {backgroundColor:"#FFFF"}
+// style={taskDone === true ? {backgroundColor:"#AA93DB"}: {backgroundColor:"#FFFF"}} 

@@ -1,9 +1,8 @@
 import styled from "styled-components"
-import { Input } from "../css"
-import { Button } from "../css"
+import { FormContainer,Input,Button } from "../css/form"
 
 const InputArea = styled(Input)`
- width: 65%;
+ width: 70%;
 `
 
 export const AddInput = (props) => {
@@ -11,10 +10,17 @@ export const AddInput = (props) => {
 
   return (
    <>
-   <div className="sm:text-lg text-sm w-full flex justify-center items-center mt-6">
-   <InputArea onChange={onChangeAddInput} placeholder="ADD YOUR TASK" value={addInputText} onKeyPress={addTaskEnter}></InputArea>
+   <FormContainer className="sm:text-lg text-sm">
+     
+   <InputArea 
+    onChange={onChangeAddInput} 
+    placeholder="ADD YOUR TASK" 
+    value={addInputText} 
+    onKeyPress={addTaskEnter}>
+    </InputArea>
+
    <Button onClick={onClickAdd}>ADD</Button>
-   </div>
+   </FormContainer>
    </>
   )
 }

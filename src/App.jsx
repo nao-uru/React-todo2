@@ -4,8 +4,8 @@ import {Header} from './components/Header'
 import {Task} from './components/Task'
 import {AddInput} from './components/AddForm'
 import {SearchInput} from './components/SearchForm'
-import {TaskAreaContainer} from './css'
-import {searchTasks} from './components/Search'
+import {Container,TaskAreaContainer} from './css/other'
+import { useSearchTasks } from "./components/hooks/useSearch";
 
 export const App = () => {
 
@@ -57,14 +57,13 @@ export const App = () => {
 
   // タスク検索
   const onChangeSearchInput = (event) => setSearchInput(event.target.value);
-  searchTasks(taskList,searchInput);
+  useSearchTasks(taskList,searchInput);
 
   return (
     <>
-   <Header></Header>
-    <div className="sm:w-370 w-4/5 m-auto">
+   <Header />
+    <Container className="sm:w-400 w-full">
 
-       <div className="sm:w-full w-4/5">
        <AddInput
         onChangeAddInput={onChangeAddInput}
         addInputText={addInput}
@@ -75,9 +74,7 @@ export const App = () => {
        <SearchInput
         onChangeSearchInput={onChangeSearchInput}
         />
-      </div>
-       
-      <div className="sm:w-full w-4/5">
+  
        <TaskAreaContainer>
          {taskList.map((todo,id) => {
           return (
@@ -92,10 +89,9 @@ export const App = () => {
             )
             })}
        </TaskAreaContainer>
-      </div>
        
 
-    </div>
+    </Container>
 
     </>
   )
