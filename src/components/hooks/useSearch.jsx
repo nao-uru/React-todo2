@@ -1,6 +1,6 @@
 
 // タスク検索
- export const searchTasks = (taskList,searchInput) => {
+export const useSearchTasks = (taskList,searchInput) => {
     
   for(let i = 0; i <taskList.length; i++) {
     const taskText = taskList[i].title;
@@ -12,3 +12,5 @@
     }
   }
 }
+
+

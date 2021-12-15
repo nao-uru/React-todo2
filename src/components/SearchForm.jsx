@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import { Input } from "../css";
+import { FormContainer,Input } from "../css/form";
 
 
 const InputArea = styled(Input)`
- width: 90%;
+ width: 100%;
  margin: 0 auto;
 `
 
@@ -13,10 +13,15 @@ export const SearchInput = (props) => {
 
   return (
    <>
-   <div className="sm:text-lg text-sm flex justify-start items-center mt-6">
-   <InputArea onChange={onChangeSearchInput} value={searchInputText} placeholder="SEARCH YOUR TASK" ></InputArea>
-   </div>
+   <FormContainer className="sm:text-lg text-sm">
+     
+   <InputArea 
+    onChange={onChangeSearchInput} 
+    value={searchInputText} 
+    placeholder="SEARCH YOUR TASK" >
+    </InputArea>
+
+   </FormContainer>
    </>
   )
 }
-
