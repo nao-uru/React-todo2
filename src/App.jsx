@@ -6,6 +6,7 @@ import {AddInput} from './components/AddForm'
 import {SearchInput} from './components/SearchForm'
 import {Container,TaskAreaContainer} from './css/other'
 import { useSearchTasks } from "./components/hooks/useSearch";
+import { NothingTaskMessage } from "./components/task-components/TaskNotion";
 
 export const App = () => {
 
@@ -76,6 +77,7 @@ export const App = () => {
         />
   
        <TaskAreaContainer>
+         {NothingTaskMessage(taskList)}
          {taskList.map((todo,id) => {
           return (
             <Task 

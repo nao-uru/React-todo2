@@ -19,7 +19,7 @@ export const Task = (props) => {
      <TaskInput 
       className="sm:text-lg text-sm" 
       type='text' 
-      value={taskText} 
+      value={taskText}
       onChange={onChangeTaskInput}
       style={taskDone ? {backgroundColor:"#BDBDBD",color:'#787878'}: {backgroundColor:"#FFFF"}} 
       />

@@ -12,7 +12,6 @@ export const Header = () => {
 
     return `${month}.${date}   ${hour}:${minuteWithZero}`
   }
-  setTimeout(getTime(),1000);
   
   return (
     <HeaderBack className="md:h-60 h-40 font-bold font-sans">
