@@ -2,9 +2,12 @@ import styled from "styled-components";
 
 export const HeaderBack= styled.div`
  width: 100%;
+ padding-left: 8%;
  background-color: #EAF7F9;
  display: flex;
- align-items:center;
+ flex-direction: column;
+ align-items: flex-start;
+ justify-content:center;
 `
 export const Container = styled.div`
  margin: 0 auto;
