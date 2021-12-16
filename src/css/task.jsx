@@ -61,3 +61,9 @@ export const DeleteIcon = styled.div`
  color:#2D2C2C;
 }
 `
+
+ export const NoTask = styled.p`
+  text-align: center;
+  font-weight: bold;
+  color:#787878;
+`
