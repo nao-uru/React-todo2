@@ -7,7 +7,7 @@ export const NothingTaskMessage = (taskCount) => {
   return (
     <>
      <NoTask>
-       NO TASK !!!
+       NO TASK HERE !!!
      </NoTask>
     </>
   )
