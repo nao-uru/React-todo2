@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled,{ keyframes } from "styled-components";
+
 
 
 export const TaskList = styled.li`
@@ -39,9 +40,9 @@ export const TaskDone = styled.div`
  color: #FFFFFF;
  cursor: pointer;
  font-weight: bold;
+ transition:all 0.8s;
 
-//  transition:all 1.0s;
-//  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+ position: relative;
 
  &:hover {
    opacity:0.8;
@@ -55,11 +56,32 @@ export const DeleteIcon = styled.div`
  display: flex;
  align-items: center;
  cursor: pointer;
- transition:all 1.0s;
+ transition:all 0.8s;
+ height: 100%;
 
  &:hover {
  color:#2D2C2C;
 }
+`
+
+const fadeIn = keyframes`
+  0 {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`;
+
+export const  TaskDoneMessage = styled.div`
+ animation: ${fadeIn} 1s ease-in-out forwards;
+ position:absolute;
+ top: -35%;
+ color: #82AEE1;
 `
 
  export const NoTask = styled.p`

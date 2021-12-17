@@ -19,8 +19,8 @@ export const Delete = (props) => {
 
   return (
   
-    <DeleteIcon onClick={onClickDelete} className="sm:text-xl text-lg sm:ml-3 ml-6" >
-     <i className="sm:text-2xl text-xl fas fa-backspace"></i>
+    <DeleteIcon onClick={onClickDelete} className="sm:text-xl text-lg sm:ml-2 ml-3" >
+     <i className="sm:text-4xl text-3xl fas fa-backspace"></i>
      </DeleteIcon>
   )
 
