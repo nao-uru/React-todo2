@@ -24,19 +24,21 @@ background-color: white;
 
 export const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 24px;
 `
 
 export const Button = styled.button`
+width:45%;
+text-align: center;
 box-shadow: 2px 3px 0px rgba(99, 99, 99, 0.25);
 border-radius: 5px;
 font-family: Noto Sans;
 font-weight: bold;
-font-size: 20px;
+font-size: 18px;
 color: #4D4D4D;
 background: #9DC8CE;
-padding: 5px 10px;
+padding: 5px;
 
 &:hover {
  background: #787878;

@@ -13,12 +13,6 @@ export const Delete = (props) => {
 
   const onClickDelete = () => {
     const deleteTask = [...taskList];
-    
-    // const delateOK = window.confirm('todoを削除してもいいですか？');
-    // if(delateOK === true) {
-    //   deleteTask.splice(id,1);
-    //   setTaskList(deleteTask);
-    // }
 
       deleteTask.splice(id,1);
       setTaskList(deleteTask);
