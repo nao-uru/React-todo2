@@ -6,11 +6,12 @@ const modalRoot = document.getElementById('modal-root');
 
 export const Modal = ({cancel,confirm}) => {
 
+
   return ReactDOM.createPortal (
     <>
     <Container>
       <ModalContainer>
-        <div className="text-center">本当に削除しますか？</div>
+        <div className="text-center">削除してよろしいですか？</div>
         <ButtonWrapper>
           <Button onClick={cancel}>CAECEL</Button>
           <Button onClick={confirm}>OK</Button>
